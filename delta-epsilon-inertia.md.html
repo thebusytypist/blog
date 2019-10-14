@@ -1,0 +1,39 @@
+<meta charset="utf-8">
+
+**Delta, permutation and inertia**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sun Oct 13 18:01:25 PDT 2019
+
+$\newcommand{\V}[1]{\boldsymbol{#1}}$
+$\newcommand{\gp}[1]{\left( #1 \right)}$
+
+
+Just find one application of the identity
+$\epsilon_{ijk} \epsilon_{lsk}
+=\delta_{il}\delta_{js} - \delta_{is}\delta_{jl}$.
+It is useful when we want to transform the inertia $\V{r}^* \V{r}^{*T}$ from
+the rest frame ($\hat{\V{r}}^* \hat{\V{r}}^{*T}$),where $\V{r}$ is the offset
+vector from the center of mass.
+
+$$
+\begin{align*}
+\V{r}^* \V{r}^{*T}
+&= \epsilon_{ijk} r_j \epsilon_{lsk} r_s \\
+&= r_j r_s \gp{\color{red}{\delta_{il}\delta_{js} - \delta_{is}\delta_{jl}}} \\
+&= r_s r_s - r_l r_i \\
+&= \V{r} \cdot \V{r} \V{\delta} - \V{r} \V{r}^T
+\end{align*}
+$$
+
+Transform of inertia:
+$$
+\begin{align*}
+\V{r}^* \V{r}^{*T}
+&= (\V{R} \hat{\V{r}})^*(\V{R} \hat{\V{r}})^{*T} \\
+&= (\hat{\V{r}}^T \V{R}^T \V{R} \hat{\V{r}}) \V{\delta}
+- (\V{R} \hat{\V{r}} \hat{\V{r}} \V{R}^T) \\
+&= \V{R} (\hat{\V{r}}^* \hat{\V{r}}^{*T}) \V{R}^T
+\end{align*}
+$$
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
