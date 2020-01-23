@@ -86,5 +86,29 @@ m_0 &= \int_{\Omega_0} \rho\,dV_0 \\
 \xx_c &= \frac{\rho}{m_0} \int_{\Omega_0} \hat{\rr}\,dV_0 \quad \text{(center of mass)}
 \end{align}
 
+Verify using maple:
+~~~~
+with(LinearAlgebra):                                
+
+r:=<x,y,z>; 
+rrt:=r.Transpose(r);
+
+tet:=Matrix(3,3,(i,j)->int(int(int(rrt[i,j],x=0..1-y-z),y=0..1-z),z=0..1));
+
+# cube
+C1:=rho*Matrix(3,3,(i,j)->int(int(int(rrt[i,j],x=-w/2..w/2),y=-h/2..h/2),z=-d/2..d/2));
+inertia1:=Trace(C1)*IdentityMatrix(3)-C1;
+
+C0:=rho*Matrix(3,3,(i,j)->int(int(int(rrt[i,j],x=0..1),y=0..1),z=0..1));
+F:=DiagonalMatrix(<w,h,d>);
+b:=-<w,h,d>/2;
+v0:=1;
+m0:=rho*v0;
+c:=rho/m0*Vector(3, i->int(int(int(r[i],x=0..1),y=0..1),z=0..1));
+C:=Determinant(F)*(F.C0.F^%T + m0*b.c^%T.F^%T + m0*F.c.b^%T + m0*b.b^%T);
+inertia:=Trace(C)*IdentityMatrix(3)-C;
+simplify(inertia - inertia1);
+~~~~
+
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 
