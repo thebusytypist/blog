@@ -1,0 +1,90 @@
+<meta charset="utf-8">
+
+**Transform of inertia**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Wed Jan 22 22:02:48 PST 2020
+
+$\newcommand{\gp}[1]{\left( #1 \right)}$
+$\newcommand{\jj}{\mathbf{j}}$
+$\newcommand{\ttau}{\boldsymbol{\tau}}$
+$\newcommand{\eye}{\boldsymbol{\delta}}$
+$\DeclareMathOperator{\tr}{tr}$
+$\renewcommand{\AA}{\mathbf{A}}$
+$\newcommand{\BB}{\mathbf{B}}$
+$\newcommand{\CC}{\mathbf{C}}$
+$\newcommand{\EE}{\mathbf{E}}$
+$\newcommand{\FF}{\mathbf{F}}$
+$\newcommand{\HH}{\mathbf{H}}$
+$\newcommand{\II}{\mathbf{I}}$
+$\newcommand{\LL}{\mathbf{L}}$
+$\newcommand{\MM}{\mathbf{M}}$
+$\newcommand{\NN}{\mathbf{N}}$
+$\newcommand{\OO}{\mathbf{O}}$
+$\newcommand{\PP}{\mathbf{P}}$
+$\newcommand{\RR}{\mathbf{R}}$
+$\renewcommand{\SS}{\mathbf{S}}$
+$\newcommand{\TT}{\mathbf{T}}$
+$\renewcommand{\TT}{\mathbf{T}}$
+$\newcommand{\UU}{\mathbf{U}}$
+$\newcommand{\VV}{\mathbf{V}}$
+$\newcommand{\WW}{\mathbf{W}}$
+$\newcommand{\XX}{\mathbf{X}}$
+$\renewcommand{\aa}{\mathbf{a}}$
+$\newcommand{\bb}{\mathbf{b}}$
+$\newcommand{\cc}{\mathbf{c}}$
+$\newcommand{\dd}{\mathbf{d}}$
+$\newcommand{\ee}{\mathbf{e}}$
+$\newcommand{\ff}{\mathbf{f}}$
+$\renewcommand{\gg}{\mathbf{g}}$
+$\newcommand{\mm}{\mathbf{m}}$
+$\newcommand{\nn}{\mathbf{n}}$
+$\newcommand{\pp}{\mathbf{p}}$
+$\newcommand{\qq}{\mathbf{q}}$
+$\newcommand{\rr}{\mathbf{r}}$
+$\renewcommand{\tt}{\mathbf{t}}$
+$\newcommand{\uu}{\mathbf{u}}$
+$\newcommand{\vv}{\mathbf{v}}$
+$\newcommand{\ww}{\mathbf{w}}$
+$\newcommand{\xx}{\mathbf{x}}$
+$\newcommand{\yy}{\mathbf{y}}$
+$\newcommand{\zz}{\mathbf{z}}$
+
+$\rr$: offset vector relative to center of mass.
+\begin{align}
+\II &= \int_\Omega \rho \gp{\rr \cdot \rr \eye - \rr \rr^T}\, dV \\
+&= \int_\Omega \rho \gp{\tr \TT \eye - \TT}\, dV \\
+&= \tr{\CC}\eye - \CC \\
+\TT &= \rr \rr^T \\
+\rr \cdot \rr &= \tr{(\rr \rr^T)} \\
+\CC &= \int_\Omega \rho \rr \rr^T\, dV
+\end{align}
+
+Initial $\hat{\CC}$:
+\begin{align}
+\hat{\CC} &= \int_{\Omega_0} \rho \hat{\rr} \hat{\rr}^T\,dV_0
+\end{align}
+
+Deformed $\CC$ by change of variable:
+\begin{align}
+\rr &= \FF \hat{\rr} + \xx \\
+\CC &= \rho \int_\Omega \rr \rr^T\,dV \\
+&= \rho \int_{\Omega_0} \gp{\FF \hat{\rr} + \xx} \gp{\FF \hat{\rr} + \xx}^T \det \FF\,dV_0 \\
+&= \rho \int_{\Omega_0} \gp{
+\FF \hat{\rr} \hat{\rr}^T \FF^T
++ \xx \hat{\rr}^T \FF^T
++ \FF \hat{\rr} \xx^T
++ \xx \xx^T
+} \det \FF\,dV_0 \\
+&= \det(\FF) \FF \hat{\CC} \FF^T
++ \rho \det(\FF) \xx \int_{\Omega_0} \hat{\rr}^T\,dV_0 \FF^T
++ \rho \det(\FF) \FF \int_{\Omega_0} \hat{\rr}\,dV_0 \xx^T
++ \rho \det(\FF) \xx \int_{\Omega_0} \,dV_0 \xx^T \\
+&= \det(\FF) \FF \hat{\CC} \FF^T
++ m_0 \det(\FF) \xx \xx_c^T \FF^T
++ m_0 \det(\FF) \FF \xx_c \xx^T
++ m_0 \det(\FF) \xx \xx^T \\
+m_0 &= \int_{\Omega_0} \rho\,dV_0 \\
+\xx_c &= \frac{\rho}{m_0} \int_{\Omega_0} \hat{\rr}\,dV_0 \quad \text{(center of mass)}
+\end{align}
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
