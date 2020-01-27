@@ -1,12 +1,59 @@
 <meta charset="utf-8">
 
-**Title**
-    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sun Oct 13 16:20:14 PDT 2019
+**TITLE**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; DATE
 
-$\newcommand{\V}[1]{\mathbf{#1}}$
-$\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}$
+$\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}$
 $\newcommand{\gp}[1]{\left( #1 \right)}$
+$\newcommand{\abs}[1]{\left| #1 \right|}$
+$\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}$
+$\newcommand{\cp}[1]{{#1^\times}}$
+$\DeclareMathOperator{\tr}{tr}$
 
+$\renewcommand{\AA}{\mathbf{A}}$
+$\newcommand{\BB}{\mathbf{B}}$
+$\newcommand{\CC}{\mathbf{C}}$
+$\newcommand{\EE}{\mathbf{E}}$
+$\newcommand{\FF}{\mathbf{F}}$
+$\newcommand{\HH}{\mathbf{H}}$
+$\newcommand{\II}{\mathbf{I}}$
+$\newcommand{\KK}{\mathbf{K}}$
+$\newcommand{\LL}{\mathbf{L}}$
+$\newcommand{\MM}{\mathbf{M}}$
+$\newcommand{\NN}{\mathbf{N}}$
+$\newcommand{\OO}{\mathbf{O}}$
+$\newcommand{\PP}{\mathbf{P}}$
+$\newcommand{\QQ}{\mathbf{Q}}$
+$\newcommand{\RR}{\mathbf{R}}$
+$\renewcommand{\SS}{\mathbf{S}}$
+$\newcommand{\TT}{\mathbf{T}}$
+$\renewcommand{\TT}{\mathbf{T}}$
+$\newcommand{\UU}{\mathbf{U}}$
+$\newcommand{\VV}{\mathbf{V}}$
+$\newcommand{\WW}{\mathbf{W}}$
+$\newcommand{\XX}{\mathbf{X}}$
+$\renewcommand{\aa}{\mathbf{a}}$
+$\newcommand{\bb}{\mathbf{b}}$
+$\newcommand{\cc}{\mathbf{c}}$
+$\newcommand{\dd}{\mathbf{d}}$
+$\newcommand{\ee}{\mathbf{e}}$
+$\newcommand{\ff}{\mathbf{f}}$
+$\renewcommand{\gg}{\mathbf{g}}$
+$\newcommand{\jj}{\mathbf{j}}$
+$\newcommand{\mm}{\mathbf{m}}$
+$\newcommand{\nn}{\mathbf{n}}$
+$\newcommand{\pp}{\mathbf{p}}$
+$\newcommand{\qq}{\mathbf{q}}$
+$\newcommand{\rr}{\mathbf{r}}$
+$\renewcommand{\tt}{\mathbf{t}}$
+$\newcommand{\uu}{\mathbf{u}}$
+$\newcommand{\vv}{\mathbf{v}}$
+$\newcommand{\ww}{\mathbf{w}}$
+$\newcommand{\xx}{\mathbf{x}}$
+$\newcommand{\yy}{\mathbf{y}}$
+$\newcommand{\zz}{\mathbf{z}}$
+$\newcommand{\ttau}{\boldsymbol{\tau}}$
+$\newcommand{\eye}{\boldsymbol{\delta}}$
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 
