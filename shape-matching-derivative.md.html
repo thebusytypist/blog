@@ -3,7 +3,60 @@
 **Notes on Shape Matching**
     &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sun Oct 13 16:20:14 PDT 2019
 
-$\newcommand{\V}[1]{\mathbf{#1}}$
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
 
 I am (re)reading the shape matching paper from Matthias. Just write down something that are not obvious to me.
 
@@ -12,71 +65,71 @@ Derivative of shape matching objective
 $$
 \begin{align*}
 \newcommand{\V}[1]{\mathbf{#1}}
-F &= \sum_i w_i (\V{R} (\V{x}_i^0 - \V{t}_0) + \V{t} - \V{x}_i)^2
+F &= \sum_i w_i (\RR (\xx_i^0 - \tt_0) + \tt - \xx_i)^2
 \end{align*}
 $$
 
 $$
 \begin{align*}
-\V{t}_0 &= \frac{\sum_i m_i \V{x}_i^0}{\sum_i m_i} &
-\V{t} &= \frac{\sum_i m_i \V{x}_i}{\sum_i m_i} \\
-\V{q}_i &= \V{x}_i^0 - \V{x}^0_{\text{cm}} &
-\V{p}_i &= \V{x}_i - \V{x}_{\text{cm}}
+\tt_0 &= \frac{\sum_i m_i \xx_i^0}{\sum_i m_i} &
+\tt &= \frac{\sum_i m_i \xx_i}{\sum_i m_i} \\
+\qq_i &= \xx_i^0 - \xx^0_{\text{cm}} &
+\pp_i &= \xx_i - \xx_{\text{cm}}
 \end{align*}
 $$
 
 $$
 \begin{align*}
-F &= \sum_i m_i (\V{A} \V{q}_i - \V{p}_i)^2 \\
-&= \sum_i m_i (\V{A} \V{q}_i - \V{p}_i)^T (\V{A} \V{q}_i - \V{p}_i) \\
+F &= \sum_i m_i (\AA \qq_i - \pp_i)^2 \\
+&= \sum_i m_i (\AA \qq_i - \pp_i)^T (\AA \qq_i - \pp_i) \\
 &= \sum_i m_i (
-\V{q}_i^T \V{A}^T \V{A} \V{q}_i
-- \V{q}_i^T \V{A}^T \V{p}_i
-- \V{p}_i^T \V{A} \V{q}_i
-+ \V{p}_i^T \V{p}_i)
+\qq_i^T \AA^T \AA \qq_i
+- \qq_i^T \AA^T \pp_i
+- \pp_i^T \AA \qq_i
++ \pp_i^T \pp_i)
 \end{align*}
 $$
 
 $$
 \begin{align*}
-\frac{d (\V{x}^T\V{M}\V{y})}{d \V{M}}
+\frac{d (\xx^T\MM\yy)}{d \MM}
 &= (x_i M_{ij} y_j)_{,rs}
 = x_i \delta_{ir} \delta_{js} y_j
 = x_r y_s
-= \V{x} \V{y}^T
+= \xx \yy^T
 \end{align*}
 $$
 
 $$
 \begin{align*}
-\frac{d (\V{x}^T\V{M}^T\V{y})}{d \V{M}}
+\frac{d (\xx^T\MM^T\yy)}{d \MM}
 &= (x_i M_{ji} y_j)_{,rs}
 = x_i \delta_{jr} \delta_{is} y_j
 = x_s y_r
-= \V{y} \V{x}^T
+= \yy \xx^T
 \end{align*}
 $$
 
 $$
 \begin{align*}
-\frac{d (\V{x}^T\V{M}^T\V{M}\V{y})}{d \V{M}}
+\frac{d (\xx^T\MM^T\MM\yy)}{d \MM}
 &= (x_i M_{ji} M_{jk} y_k)_{,rs}
 = x_i \delta_{jr} \delta_{is} M_{jk} y_k
 + x_i M_{ji} \delta_{jr} \delta_{ks} y_k \\
 &= x_s M_{rk} y_k + x_i M_{ri} y_s
-= \V{M} \V{y} \V{x}^T + \V{M} \V{x} \V{y}^T
+= \MM \yy \xx^T + \MM \xx \yy^T
 \end{align*}
 $$
 
 $$
 \begin{align*}
-\frac{d F}{d \V{A}}
+\frac{d F}{d \AA}
 &= \sum_i m_i (
-2 \V{A} \V{q}_i \V{q}_i^T
-- 2\V{p}_i \V{q}_i^T)
-= \V{0} \\
-\V{A} &=
-(\sum_i m_i \V{p}_i \V{q}_i^T)(\sum_i m_i \V{q}_i \V{q}_i^T)^{-1}
+2 \AA \qq_i \qq_i^T
+- 2\pp_i \qq_i^T)
+= \mathbf{0} \\
+\AA &=
+(\sum_i m_i \pp_i \qq_i^T)(\sum_i m_i \qq_i \qq_i^T)^{-1}
 \end{align*}
 $$
 
