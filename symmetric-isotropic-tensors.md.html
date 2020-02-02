@@ -1,0 +1,146 @@
+<meta charset="utf-8">
+
+**Symmetric isotropic tensors**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sun Feb  2 15:05:42 PST 2020
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+This is to verify the degrees of freedom of the Cauchy stress tensor.
+The idea was from Prof. Schroeder and he also taught me Maple.
+The 3D case works as expected but in 2D case I have an extra mode other than
+the trace or symmetric part ($\AA+\AA^T$).
+
+# 3D case
+Use Rodrigues' rotation formula for a general rotation $\RR$.
+~~~~
+restart;
+with(LinearAlgebra):
+C:=Matrix(3,3,(i,j)->Matrix(3,3,(k,l)->c||i||j||k||l));
+
+d:=<d1,d2,d3>;
+w:=<w1,w2,w3>;
+K:=Matrix(3,3,(i,j)->k||i||j);
+K:=K-K^%T;
+E:=convert(K.w - CrossProduct(d,w),list);
+sol:=eliminate([op(diff(E,w1)),op(diff(E,w2)),op(diff(E,w3))],indets(K))[1];
+K:=subs(sol,K);
+R:=IdentityMatrix(3) + s * K + (1-c) * K^2;
+
+R1:=subs(c=0,s=1,d1=1,d2=0,d3=0,R);
+R2:=subs(c=0,s=-1,d1=1,d2=0,d3=0,R);
+R3:=subs(c=cos(Pi/2),s=sin(Pi/2),d1=0,d2=1,d3=0,R);
+R4:=subs(c=cos(Pi/4),s=sin(Pi/4),d1=0,d2=1,d3=0,R);
+R5:=subs(c=cos(Pi/3),s=sin(Pi/3),d1=0,d2=1,d3=0,R);
+
+E:='[seq(seq(seq(seq(C[r,v][t,u]-`+`(seq(seq(seq(seq(C[i,j][k,l]*Q[i,r]*Q[j,v]*Q[k,t]*Q[l,u],i=1..3),j=1..3),k=1..3),l=1..3)),r=1..3),v=1..3),t=1..3),u=1..3)]';
+
+E1:=subs(Q=R1,E):
+E3:=subs(Q=R3,E):
+E4:=subs(Q=R4,E):
+
+C1:=simplify(subs(eliminate([op(E1),op(E3),op(E4)],indets(C))[1],C));
+
+indets(C1);
+
+A:=Matrix(3,3,(i,j)->a||i||j);
+B:=map(z->Trace(Transpose(z).(A+A^%T)),C1);
+F:=simplify(simplify(B-Transpose(B)));
+
+Y:=map(z->Trace(Transpose(z).(A-A^%T)),C1);
+G:=simplify(Y);
+C2:=subs(eliminate(convert(convert(G,list),list),indets(C1))[1],C1);
+
+p:=map(z->Trace(Transpose(z).A),C2);
+simplify(subs(c3322=k,c3333=k + m,p) - m/2 * (A + A^%T) - k * Trace(A));
+~~~~
+This gives me $\mathbf{0}$ in the last line.
+
+# 2D case
+~~~~
+restart;
+with(LinearAlgebra):
+C:=Matrix(2,2,(i,j)->Matrix(2,2,(k,l)->c||i||j||k||l));
+R:=<c,-s;s,c>;
+E:=[seq(seq(seq(seq(C[r,v][t,u]-`+`(seq(seq(seq(seq(C[i,j][k,l]*R[i,r]*R[j,v]*R[k,t]*R[l,u],i=1..2),j=1..2),k=1..2),l=1..2)),r=1..2),v=1..2),t=1..2),u=1..2)];
+E1:=subs(c=0,s=1,E);
+E2:=subs(c=0,s=-1,E);
+E3:=subs(c=cos(Pi/2),s=sin(Pi/2),E);
+E3:=subs(c=cos(Pi/4),s=sin(Pi/4),E);
+E4:=subs(c=cos(Pi/3),s=sin(Pi/3),E);
+C2:=subs(eliminate([op(E1),op(E2),op(E3),op(E4)],indets(C))[1],C);
+indets(C2);
+
+A:=Matrix(2,2,(i,j)->a||i||j);
+B:=map(z->Trace(Transpose(z).(A+A^%T)),C2);
+F:=simplify(B-Transpose(B));
+C3:=subs(eliminate(convert(convert(F,list),list),indets(C2))[1],C2);
+
+Y:=map(z->Trace(Transpose(z).(A-A^%T)),C3);
+G:=simplify(Y);
+C4:=subs(eliminate(convert(convert(G,list),list),indets(C3))[1],C3);
+
+p:=map(z->Trace(Transpose(z).A),C4);
+simplify(subs(c2211=k,c2221=n,c2222=k+m,p) - m/2 * (A + A^%T) - k * Trace(A));
+~~~~
+By running this script I got
+~~~~
+[-n (a21 + a12)    n (a11 - a22)]
+[                               ]
+[n (a11 - a22)     n (a21 + a12)]
+~~~~
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
+
