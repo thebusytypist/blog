@@ -74,9 +74,15 @@ $$
 \end{align}
 $$
 
-Let $\uu \cdot \nn = 0$, $\norm{\uu}=1$, and
+Let $\uu$ be the axis of rotational symmetry, $\uu \cdot \nn = 0$, $\norm{\uu}=1$, and
 $\rr_\parallel = \rr - (\rr^T\nn)\nn$.
-Then $\rr_\parallel = \beta \uu$.
+$$
+\begin{align}
+\QQ \uu &= \uu \\
+\rr' &= \QQ \rr \\
+\CC' &= \CC \quad \text{(identical integrations)}
+\end{align}
+$$
 $$
 \begin{align}
 \CC \uu
@@ -84,10 +90,20 @@ $$
 - 2 \rho \int_{\Omega_+} (\rr^T\nn) \nn \rr^T \uu \,dV \\
 &= 2 \rho \int_{\Omega_+} \rr^T \uu \gp{\rr - (\rr^T\nn)\nn} \,dV \\
 &= 2 \rho \int_{\Omega_+} \rr^T \uu \rr_\parallel \,dV \\
-&= 2 \rho \beta (\int_{\Omega_+} \rr^T \uu \,dV) \uu
+\CC' \uu
+&= 2 \rho \int_{\Omega_+} \QQ \rr \rr^T \uu \,dV
+- 2 \rho \int_{\Omega_+} (\rr^T \QQ^T \QQ \nn) \QQ \nn \rr^T \QQ^T \uu \,dV \\
+&= 2 \rho \int_{\Omega_+} \QQ \rr \rr^T \uu \,dV
+- 2 \rho \int_{\Omega_+} (\rr^T \nn) \QQ \nn \rr^T \uu \,dV \\
+&= 2 \rho \int_{\Omega_+} (\rr^T\uu) \gp{\QQ \rr - (\rr^T\nn) \QQ \nn} \,dV \\
+\CC \uu = \CC' \uu \\
+\rr_\parallel &= \QQ \rr_\parallel \\
+\rr_\parallel &= \beta \uu \\
+\CC \uu &= 2 \rho \int_{\Omega_+} \rr^T \uu \rr_\parallel \,dV \\
+&= 2 \rho \gp{\int_{\Omega_+} \beta \rr^T \uu \,dV} \uu
 \end{align}
 $$
-It is an eigenvector of $\CC$ (and also inertia $\II$).
+$\uu$ is an eigenvector of $\CC$ (and also inertia $\II$).
 
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
 
