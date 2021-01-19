@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+
+**First EPM test**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Mon Jan 18 21:47:11 PST 2021
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+Now I have my initial setup ready to solve a coupled system $P=F(X),X=S(P)$
+with partitioned method. It would be interesting to compare it with the
+Gauss-Seidel style solver in the previous post.  Unfortunately at the moment I
+do not have a monolithic solver so it is difficult to tell which one is better.
+
+![EPM with 2 iterations](images/epm2-coupling.mp4 width="250px")
+
+Gauss-Seidel solver and EPM have very close appearance using the previous
+setup.  So this time I have to use a different one, where multiple rigid bodies
+can interact through fluid.
+
+![EPM 1](images/epm-gs-comparison/epm1-f500.png width=100) ![EPM 2](images/epm-gs-comparison/epm2-f500.png width=100) ![GS 8](images/epm-gs-comparison/gs8-f500.png width=100) ![GS 4](images/epm-gs-comparison/gs4-f500.png width=100) ![GS 1](images/epm-gs-comparison/gs1-f500.png width=100)
+
+The EPM result with 2 iterations looks close to the Gauss-Seidel one with 8
+iterations.  I also plot the angle of the top right rigid box between 400-500
+frames in different simulations. Most of the results feel convincing to me.
+However I cannot explain why they do not converge monotonically to a value as
+more iterations are used.
+
+![Angles of top right rigid box](images/epm-gs-comparison.svg width=500px)
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
