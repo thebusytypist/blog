@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Linear Constraints</title>
+        <description>Linear Constraints</description>
+        <link>https://blog.linearconstraints.net</link>
+        <lastBuildDate>Sun, 07 Feb 2021 10:31:22 -0800</lastBuildDate>
+        <language>en-us</language>
+
+        <item>
+            <title>About</title>
+            <link>/about.md.html</link>
+            <pubDate>Sun, 07 Feb 2021 10:32:13 -0800</pubDate>
+        </item>
+    </channel>
+</rss>
