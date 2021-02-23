@@ -4,10 +4,16 @@
         <title>Linear Constraints</title>
         <description>Linear Constraints</description>
         <link>https://blog.linearconstraints.net</link>
-        <lastBuildDate>Sun, 07 Feb 2021 13:31:09 -0800</lastBuildDate>
+        <lastBuildDate>Mon, 22 Feb 2021 23:13:14 -0800</lastBuildDate>
         <language>en-us</language>
 
         <!--NEWITEM-->
+        <item>
+            <title>Pretend I do not know quaternion before</title>
+            <link>/isomorphisms-between-h-and-gl4.md.html</link>
+            <pubDate>Mon, 22 Feb 2021 23:13:14 -0800</pubDate>
+        </item>
+
         <item>
             <title>First EPM test</title>
             <link>/first-epm-test.md.html</link>
