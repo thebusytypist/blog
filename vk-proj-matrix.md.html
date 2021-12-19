@@ -1,0 +1,100 @@
+<meta charset="utf-8">
+
+**Vulkan perspective projection matrix**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sun Dec 19 02:13:24 PM PST 2021
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+Vulkan uses a different NDC than OpenGL. Y axis is downward and Z is mapped to
+$[0,1]$. I would like to preserve the convention in shaders and only encode
+those differences in the projection transform.
+
+~~~~
+restart;
+
+n00:=<l,b,-n,1>;
+n10:=<r,b,-n,1>;
+n11:=<r,t,-n,1>;
+n01:=<l,t,-n,1>;
+
+m00:=n*<-1,1,0,1>;
+m10:=n*<1,1,0,1>;
+m11:=n*<1,-1,0,1>;
+m01:=n*<-1,-1,0,1>;
+
+h:=f/n;
+f00:=<h*l,h*b,-f,1>;
+f10:=<h*r,h*b,-f,1>;
+f11:=<h*r,h*t,-f,1>;
+f01:=<h*l,h*t,-f,1>;
+
+g00:=f*<-1,1,1,1>;
+g10:=f*<1,1,1,1>;
+g11:=f*<1,-1,1,1>;
+g01:=f*<-1,-1,1,1>;
+
+P:=Matrix(4,4,(i,j)->p||i||j);
+
+E1:=[seq(seq(op(convert(P.n||i||j-m||i||j,list)),i=0..1),j=0..1)];
+E2:=[seq(seq(op(convert(P.f||i||j-g||i||j,list)),i=0..1),j=0..1)];
+s:=eliminate([op(E1),op(E2)],indets(P));
+M:=subs(s[1],P);
+
+s1:=eliminate([op(E1),op(E2),t=-b,t=tan(q/2)*n,r=-l,r=k*t],indets(P) union {t,b,r,l});
+M1:=subs(s1[1],P);
+~~~~
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
