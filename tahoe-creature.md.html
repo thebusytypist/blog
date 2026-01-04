@@ -1,0 +1,87 @@
+<meta charset="utf-8">
+
+**Tahoe creature**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sat Jan  3 21:13:38 PST 2026
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+![Figure [tahoe-creature]: By the lake](images/tahoe-creature.jpg width="600px")
+
+I had to stay in a cabin at Incline Village over Christmas 2025 due to heavy snow.
+That gave me a chance to revisit several things and spend more time talking to it.
+
+*Tensor*. This is a fancy term that I keep hearing in many different
+contexts. But essentially it should be some kind of physics quantity that obeys
+a set of rules under _transformation_. It gave me a fluent
+walkthrough and helped grow this idea for me. I am pretty sure this kind of content has been
+mentioned again and again in textbooks. But what attracts me most is that I set the pace and direction of the narrative this
+time, and it fills in the blanks. To be more specific, it is really good at tedious but necessary things, such as substituting expressions, changing dummy indices, collecting terms, and simplifying expressions.
+
+*Analysis on Manifolds, Munkres*. I know multivariate calculus. After spending some time with Tao's Analysis, I just wanted to use this one
+for a quick pass to refresh my memory. With its help, this can be really fast, I have to admit.
+I made it verify my proofs, and this interactive learning feels great.
+
+*Krylov subspace*. I know conjugate gradient (or Lanczos actually) comes from orthogonalized Krylov subspace.
+But I didn't quite know what comes next to arrive at that tri-term update. Again, it fills in the blanks for me. The whole conversation is pretty long, and more complex than I thought, yet still shorter and denser than any textbook.
+
+*Quaternion*. Almost everybody treats quaternion multiplication as given. I don't quite like that.
+Previously I attempted to derive it using just linear algebra but gave up. You can find that post.
+This time it gave me what I wanted. We started with the general form $[s, \vv]$, gradually imposed orthogonality, isotropy, linearity, and several minor things like the unit element, and eventually arrived at the desired multiplication arithmetic. I like this approach to learning: start from something general, impose the necessary requirements, and finally the conclusion follows—it has to be like that.
+Lacoursière in his Ghosts and Machines has another unique derivation; he realized $\LL(\pp) \LL(\qq)$ is surprisingly again in the form of $\LL()$. That leads to the quaternion multiplication too.
+Anyway, all I want to say is that it is really good at symbolic work and frees me from that tedious labor.
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
