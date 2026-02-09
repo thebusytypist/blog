@@ -1,0 +1,83 @@
+<meta charset="utf-8">
+
+**Interactive learning**
+    &#127968; [Home]("https://blog.linearconstraints.net") &#x2709; ounanding@gmail.com &#x1F4C5; Sun Feb  8 22:14:11 PST 2026
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+![Figure [rigging-creature]: Rigging creature](images/rigging-creature.jpg width="600px")
+
+I did a pass through some old math and physics topics with Claude this weekend.
+Unlike how I learned them first time from school, I decided on the flow of reasoning
+and let Claude fill the blanks this time.
+I hate throwing definitions or equations from vacuum. Everything should have a motivation: it has to be this way exclusively given our requirements and expectations.
+
+*Rigid body dynamics*. It is conventional to just define momentum or torque using cross products. But it deserves an important question: why is the cross product everywhere when we start to talk about rotational motion? The true starting point is to take the time derivative of the rotation orthogonality identity. That eventually leads to everything, such as Lie.
+
+*Lie*. I was not familiar with Lie. I only knew some equations or definitions, but lacked a strong *motivation*. Dealing with rotation gives me a chance to face it. The key is *linearization*, because rotations are not on a flat space. So I have to care about the tangent and use the tangent to make a trajectory, which leads to a typical ODE, which in turn leads to the exponential mapping.
+
+*Symmetry*. Again, I don't accept a definition of angular momentum from vacuum.
+I started with translational momentum, and the symmetry will naturally lead to angular momentum. I had this derivation several years ago, and it is very interesting that Claude told me that this is actually Noether's theorem in action.
+
+*Inertia*. This is again very natural from the translational momentum with symmetry. I went further with the principal inertia direction this time. Several years ago I had a very detailed and tedious derivation to show this direction from
+eigen decomposition aligns with the shape symmetry axis. But now Claude showed me
+this is quite obvious if we use the tensor transform rules.
+
+*Matrix derivatives*. This is a byproduct while I walked through some topics. I kept forgetting the matrix "dot product" (trace, a.k.a Frobenius inner product),
+and the cyclic property of trace. Glad to have Claude remind me about them again after my Continuum Mechanics class.
+
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
