@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Linear Constraints</title>
+  <link href="https://blog.linearconstraints.net"/>
+  <link rel="self" href="https://blog.linearconstraints.net/atom.xml"/>
+  <id>https://blog.linearconstraints.net/</id>
+  <updated>2026-02-08T22:14:11-08:00</updated>
+  <author>
+    <name>Ounan Ding</name>
+    <email>ounanding@gmail.com</email>
+  </author>
+
+  <entry>
+    <title>Interactive learning</title>
+    <link href="https://blog.linearconstraints.net/interactive-learning.md.html"/>
+    <id>https://blog.linearconstraints.net/interactive-learning.md.html</id>
+    <updated>2026-02-08T22:14:11-08:00</updated>
+    <summary>Interactive learning</summary>
+  </entry>
+
+  <entry>
+    <title>Tahoe creature</title>
+    <link href="https://blog.linearconstraints.net/tahoe-creature.md.html"/>
+    <id>https://blog.linearconstraints.net/tahoe-creature.md.html</id>
+    <updated>2026-01-03T21:13:38-08:00</updated>
+    <summary>Tahoe creature</summary>
+  </entry>
+
+  <entry>
+    <title>The waiting village</title>
+    <link href="https://blog.linearconstraints.net/the-waiting-willage.md.html"/>
+    <id>https://blog.linearconstraints.net/the-waiting-willage.md.html</id>
+    <updated>2025-11-29T12:37:04-08:00</updated>
+    <summary>The waiting village</summary>
+  </entry>
+
+  <entry>
+    <title>Vulkan perspective projection matrix</title>
+    <link href="https://blog.linearconstraints.net/vk-proj-matrix.md.html"/>
+    <id>https://blog.linearconstraints.net/vk-proj-matrix.md.html</id>
+    <updated>2021-12-19T14:13:24-08:00</updated>
+    <summary>Vulkan perspective projection matrix</summary>
+  </entry>
+
+  <entry>
+    <title>Programming exercises: dump stiffness matrix</title>
+    <link href="https://blog.linearconstraints.net/explicit-stiffness-matrix.md.html"/>
+    <id>https://blog.linearconstraints.net/explicit-stiffness-matrix.md.html</id>
+    <updated>2021-04-24T22:12:55-07:00</updated>
+    <summary>Programming exercises: dump stiffness matrix</summary>
+  </entry>
+
+  <entry>
+    <title>Pretend I do not know quaternion before</title>
+    <link href="https://blog.linearconstraints.net/isomorphisms-between-h-and-gl4.md.html"/>
+    <id>https://blog.linearconstraints.net/isomorphisms-between-h-and-gl4.md.html</id>
+    <updated>2021-02-22T22:44:49-08:00</updated>
+    <summary>Pretend I do not know quaternion before</summary>
+  </entry>
+
+  <entry>
+    <title>First EPM test</title>
+    <link href="https://blog.linearconstraints.net/first-epm-test.md.html"/>
+    <id>https://blog.linearconstraints.net/first-epm-test.md.html</id>
+    <updated>2021-01-18T21:47:11-08:00</updated>
+    <summary>First EPM test</summary>
+  </entry>
+
+  <entry>
+    <title>Weak coupling</title>
+    <link href="https://blog.linearconstraints.net/weak-coupling.md.html"/>
+    <id>https://blog.linearconstraints.net/weak-coupling.md.html</id>
+    <updated>2021-01-02T16:27:10-08:00</updated>
+    <summary>Weak coupling</summary>
+  </entry>
+
+  <entry>
+    <title>Incompressible fluid</title>
+    <link href="https://blog.linearconstraints.net/incompressible-fluid.md.html"/>
+    <id>https://blog.linearconstraints.net/incompressible-fluid.md.html</id>
+    <updated>2020-12-23T20:08:00-08:00</updated>
+    <summary>Incompressible fluid</summary>
+  </entry>
+
+  <entry>
+    <title>Linear modes in 3D</title>
+    <link href="https://blog.linearconstraints.net/linear-modes-3d.md.html"/>
+    <id>https://blog.linearconstraints.net/linear-modes-3d.md.html</id>
+    <updated>2020-06-13T21:48:09-07:00</updated>
+    <summary>Linear modes in 3D</summary>
+  </entry>
+
+  <entry>
+    <title>Linear modes</title>
+    <link href="https://blog.linearconstraints.net/linear-modes.md.html"/>
+    <id>https://blog.linearconstraints.net/linear-modes.md.html</id>
+    <updated>2020-05-22T14:48:49-07:00</updated>
+    <summary>Linear modes</summary>
+  </entry>
+
+  <entry>
+    <title>Derivative of stiffness matrix</title>
+    <link href="https://blog.linearconstraints.net/derivative-of-stiffness.md.html"/>
+    <id>https://blog.linearconstraints.net/derivative-of-stiffness.md.html</id>
+    <updated>2020-05-14T19:30:20-07:00</updated>
+    <summary>Derivative of stiffness matrix</summary>
+  </entry>
+
+  <entry>
+    <title>Position differential</title>
+    <link href="https://blog.linearconstraints.net/position-differential.md.html"/>
+    <id>https://blog.linearconstraints.net/position-differential.md.html</id>
+    <updated>2020-05-06T19:59:10-07:00</updated>
+    <summary>Position differential</summary>
+  </entry>
+
+  <entry>
+    <title>Symmetry axis is an eigenvector</title>
+    <link href="https://blog.linearconstraints.net/symmetry-axis-is-an-eigenvector.md.html"/>
+    <id>https://blog.linearconstraints.net/symmetry-axis-is-an-eigenvector.md.html</id>
+    <updated>2020-02-02T21:39:21-08:00</updated>
+    <summary>Symmetry axis is an eigenvector</summary>
+  </entry>
+
+  <entry>
+    <title>Symmetric isotropic tensors</title>
+    <link href="https://blog.linearconstraints.net/symmetric-isotropic-tensors.md.html"/>
+    <id>https://blog.linearconstraints.net/symmetric-isotropic-tensors.md.html</id>
+    <updated>2020-02-02T15:05:42-08:00</updated>
+    <summary>Symmetric isotropic tensors</summary>
+  </entry>
+
+  <entry>
+    <title>Kinetic energy under rotation</title>
+    <link href="https://blog.linearconstraints.net/kinetic-energy-under-rotation.md.html"/>
+    <id>https://blog.linearconstraints.net/kinetic-energy-under-rotation.md.html</id>
+    <updated>2020-01-26T16:50:07-08:00</updated>
+    <summary>Kinetic energy under rotation</summary>
+  </entry>
+
+  <entry>
+    <title>Transform of inertia</title>
+    <link href="https://blog.linearconstraints.net/transform-of-inertia.md.html"/>
+    <id>https://blog.linearconstraints.net/transform-of-inertia.md.html</id>
+    <updated>2020-01-22T22:02:48-08:00</updated>
+    <summary>Transform of inertia</summary>
+  </entry>
+
+  <entry>
+    <title>Delta, permutation and inertia</title>
+    <link href="https://blog.linearconstraints.net/delta-epsilon-inertia.md.html"/>
+    <id>https://blog.linearconstraints.net/delta-epsilon-inertia.md.html</id>
+    <updated>2019-10-13T18:01:25-07:00</updated>
+    <summary>Delta, permutation and inertia</summary>
+  </entry>
+
+  <entry>
+    <title>Notes on Shape Matching</title>
+    <link href="https://blog.linearconstraints.net/shape-matching-derivative.md.html"/>
+    <id>https://blog.linearconstraints.net/shape-matching-derivative.md.html</id>
+    <updated>2019-10-13T16:20:14-07:00</updated>
+    <summary>Notes on Shape Matching</summary>
+  </entry>
+
+  <entry>
+    <title>About</title>
+    <link href="https://blog.linearconstraints.net/about.md.html"/>
+    <id>https://blog.linearconstraints.net/about.md.html</id>
+    <updated>2019-10-06T16:07:26-07:00</updated>
+    <summary>About</summary>
+  </entry>
+
+</feed>
