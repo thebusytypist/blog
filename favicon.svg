@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="8" fill="#2c3e50"/>
+  <!--
+    L-shaped mesh: 2-node-wide vertical bar, wider horizontal base.
+    Nodes are offset between columns and diagonals alternate
+    to create an irregular mesh look. Two interior nodes in the
+    horizontal part break the regularity further.
+
+    N0=(10,6)  N1=(26,6)
+    N2=(10,17) N3=(26,20)
+    N4=(10,30) N5=(26,32)
+    N6=(10,42) N7=(26,42)  N8=(44,42)  N9=(56,42)
+    N10=(10,56) N11=(26,56) N12=(40,56) N13=(56,56)
+                             N14=(34,48) N15=(48,50)
+  -->
+  <g stroke="#ecf0f1" stroke-width="1.5" stroke-linecap="round">
+    <!-- Vertical bar: quad 0 (\ diagonal) -->
+    <line x1="10" y1="6" x2="26" y2="6"/>
+    <line x1="10" y1="6" x2="10" y2="17"/>
+    <line x1="26" y1="6" x2="26" y2="20"/>
+    <line x1="10" y1="17" x2="26" y2="20"/>
+    <line x1="10" y1="6" x2="26" y2="20"/>
+    <!-- Vertical bar: quad 1 (/ diagonal) -->
+    <line x1="10" y1="17" x2="10" y2="30"/>
+    <line x1="26" y1="20" x2="26" y2="32"/>
+    <line x1="10" y1="30" x2="26" y2="32"/>
+    <line x1="26" y1="20" x2="10" y2="30"/>
+    <!-- Vertical bar: quad 2 (\ diagonal) -->
+    <line x1="10" y1="30" x2="10" y2="42"/>
+    <line x1="26" y1="32" x2="26" y2="42"/>
+    <line x1="10" y1="42" x2="26" y2="42"/>
+    <line x1="10" y1="30" x2="26" y2="42"/>
+    <!-- Vertical bar: quad 3 (/ diagonal) -->
+    <line x1="10" y1="42" x2="10" y2="56"/>
+    <line x1="26" y1="42" x2="26" y2="56"/>
+    <line x1="10" y1="56" x2="26" y2="56"/>
+    <line x1="26" y1="42" x2="10" y2="56"/>
+    <!-- Horizontal part: top and right boundary -->
+    <line x1="26" y1="42" x2="44" y2="42"/>
+    <line x1="44" y1="42" x2="56" y2="42"/>
+    <line x1="56" y1="42" x2="56" y2="56"/>
+    <!-- Horizontal part: bottom boundary -->
+    <line x1="56" y1="56" x2="40" y2="56"/>
+    <line x1="40" y1="56" x2="26" y2="56"/>
+    <!-- Horizontal part: interior edges around N14 and N15 -->
+    <line x1="26" y1="42" x2="34" y2="48"/>
+    <line x1="44" y1="42" x2="34" y2="48"/>
+    <line x1="44" y1="42" x2="48" y2="50"/>
+    <line x1="56" y1="42" x2="48" y2="50"/>
+    <line x1="56" y1="56" x2="48" y2="50"/>
+    <line x1="40" y1="56" x2="48" y2="50"/>
+    <line x1="40" y1="56" x2="34" y2="48"/>
+    <line x1="26" y1="56" x2="34" y2="48"/>
+    <line x1="34" y1="48" x2="48" y2="50"/>
+  </g>
+  <!-- Nodes -->
+  <g fill="#3498db">
+    <circle cx="10" cy="6" r="2.5"/>
+    <circle cx="26" cy="6" r="2.5"/>
+    <circle cx="10" cy="17" r="2.5"/>
+    <circle cx="26" cy="20" r="2.5"/>
+    <circle cx="10" cy="30" r="2.5"/>
+    <circle cx="26" cy="32" r="2.5"/>
+    <circle cx="10" cy="42" r="2.5"/>
+    <circle cx="26" cy="42" r="2.5"/>
+    <circle cx="44" cy="42" r="2.5"/>
+    <circle cx="56" cy="42" r="2.5"/>
+    <circle cx="10" cy="56" r="2.5"/>
+    <circle cx="26" cy="56" r="2.5"/>
+    <circle cx="40" cy="56" r="2.5"/>
+    <circle cx="56" cy="56" r="2.5"/>
+    <circle cx="34" cy="48" r="2.5"/>
+    <circle cx="48" cy="50" r="2.5"/>
+  </g>
+</svg>
