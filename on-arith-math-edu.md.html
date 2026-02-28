@@ -1,0 +1,136 @@
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+
+**On arithmetic and math education**
+    <a href="https://blog.linearconstraints.net"><img src="/images/house-fill.svg" height="16" style="vertical-align:middle"></a> [Home]("https://blog.linearconstraints.net") <a href="mailto:ounanding@gmail.com"><img src="/images/envelope-fill.svg" height="16" style="vertical-align:middle"></a> ounanding@gmail.com <img src="/images/calendar3.svg" height="16" style="vertical-align:middle"> Fri Feb 27 19:50:25 PST 2026
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+My kid has started to get some challenging first grade "math"
+problems, and I have guided her on how to solve them.
+
+The problems themselves are not quite interesting from an adult's perspective.
+But the key part of this post is to unlearn and re-learn problem solving strategy, stay disciplined
+on what tools I am using, and practice my exposition.
+
+!!!
+    Some penguins were playing on the ice. Ten of them dove into the water.
+    A few seconds later, 6 of those penguins jumped back onto the ice.
+    Now there are 12 penguins on the ice.
+    How many penguins were on the ice to start? Use numbers, pictures, or words to show
+    how you got the answer.
+
+
+Firstly, refrain from using any kind of equations, or tendency to define an unknown,
+no matter if you call it "x" or just draw a square. An equation (and also its associated solving techniques) is indeed a powerful
+_tool_ to approach this problem. However, its usefulness on the surface
+takes away the essence of a deeper _concept_ too quickly, and in an unconscious way.
+
+What this problem gives is several observations of the number of penguins on ice or in water,
+interleaved with penguins' movements between the ice and the water.
+The ask is to find out the number of penguins on ice at the beginning.
+
+An immediate reaction to this problem is to follow the penguin activities in a reversed order.
+Let me write down this idea.
+
+!!! Tip
+    We don't know the number of penguins on the ice at the beginning.
+    But the story tells us the number of penguins after they jump into and out of the water.
+    We can chase back like a detective and find out how many penguins were
+    on the ice at the beginning.
+
+    The key idea is to "undo" the activity that penguins did.
+    For example, if a penguin jumps into the water, we let it jump back to the ice in our mind,
+    and that will eventually recover how many penguins were on the ice.
+
+    Starting with 12 penguins at the end,
+    we learn 6 of them just joined them from the water.
+    To "undo" it, we exclude these 6 penguins, and that tells us 6 (12 - 6) were on the ice.
+    Proceeding in reverse, 10 of them had left the ice.
+    To "undo" it, we add them back to the total number,
+    that gives us 16 (6 + 10) penguins were on the ice at the beginning.
+
+While this solves the problem, I don't quite like the reverse process, which usually
+requires some explanation, and can lead to unnecessary explanation of the order of events.
+I don't like the "undo" idea either, in the sense that we need to do an extra translation
+of the direction in which the penguins move.
+
+I want to try a different exposition, by noticing a concept of _conservation_.
+
+!!! Tip
+    The total number of the penguins, no matter how they jump between the water and the ice,
+    always stays the same.
+    If we know the number of penguins in the water and on the ice, then adding them together will
+    always give us the number of penguins on the ice at the beginning.
+
+    Let's follow the activities the penguins made, and keep track of the number of penguins
+    in the water. Then at the end, when we are told the number of penguins on the ice,
+    we can add them together to recover the answer.
+
+    Firstly, 10 penguins joined the "water team".
+    Then, 6 of the "water team" left for the "ice team", thus the "water team" has only 4 (10 - 6) left.
+    Finally, we know that 12 penguins are on the ice.
+    We add the "water team" and "ice team" together, that gives us 16 (4 + 12) penguins.
+    Since the total number of the penguins does not change throughout the game,
+    we claim that 16 penguins were on the ice at the beginning.
+
+
+This is much better; I don't have to use any help of reversed process, or undo anything.
+Every step is just a straightforward translation of the story into arithmetic.
+More importantly, this simple _conservation_ (and also _invariance_) idea is essential
+for all more advanced math concepts.
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
