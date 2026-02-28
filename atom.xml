@@ -5,11 +5,19 @@
   <link href="https://blog.linearconstraints.net"/>
   <link rel="self" href="https://blog.linearconstraints.net/atom.xml"/>
   <id>https://blog.linearconstraints.net/</id>
-  <updated>2026-02-08T22:14:11-08:00</updated>
+  <updated>2026-02-27T19:50:25-08:00</updated>
   <author>
     <name>Ounan Ding</name>
     <email>ounanding@gmail.com</email>
   </author>
+
+  <entry>
+    <title>On arithmetic and math education</title>
+    <link href="https://blog.linearconstraints.net/on-arith-math-edu.md.html"/>
+    <id>https://blog.linearconstraints.net/on-arith-math-edu.md.html</id>
+    <updated>2026-02-27T19:50:25-08:00</updated>
+    <summary>On arithmetic and math education</summary>
+  </entry>
 
   <entry>
     <title>Interactive learning</title>
