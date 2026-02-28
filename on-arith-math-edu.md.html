@@ -133,4 +133,18 @@ Every step is just a straightforward translation of the story into arithmetic.
 More importantly, this simple _conservation_ (and also _invariance_) idea is essential
 for all more advanced math concepts.
 
+You probably don't realize the power of conservation yet. But let me fast-forward
+a bit, to the moment when one wonders why a tensor transform rule
+has to be in the form of $\FF \MM \FF^{-1}$. The reason is to have _any_ scalar that
+can be computed from the tensor _invariant_ under different spaces.
+One example is the trace of the tensor.
+
+$$
+\begin{align*}
+\tr(\MM) &= M^i_i \\
+m^i_j &= F^i_k M^k_l (F^{-1})^l_j \\
+m^i_i &= F^i_k M^k_l (F^{-1})^l_i = \delta^l_k M^k_l = M^k_k
+\end{align*}
+$$
+
 <!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
