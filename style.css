@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Source Sans 3';
+    src: url('/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Sans 3';
+    src: url('/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200 900;
+    font-style: italic;
+}
+
+body {
+    font-family: 'Source Sans 3', sans-serif;
+}
