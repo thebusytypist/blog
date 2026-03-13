@@ -14,4 +14,9 @@
 
 body {
     font-family: 'Source Sans 3', sans-serif;
+    background-color: oklch(88% 0.005 200);
+}
+
+.md a[href] {
+    color: #3a6194;
 }
