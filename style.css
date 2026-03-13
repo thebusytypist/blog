@@ -20,3 +20,7 @@ body {
 .md a[href] {
     color: #3a6194;
 }
+
+.md pre.tilde {
+    background-color: oklch(83% 0.005 200);
+}
