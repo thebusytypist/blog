@@ -1,0 +1,86 @@
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<link rel="stylesheet" href="/style.css">
+
+**Complete the cube**
+    <a href="https://blog.linearconstraints.net"><img src="/images/house-fill.svg" height="16" style="vertical-align:middle"></a> [Home]("https://blog.linearconstraints.net") <a href="mailto:ounanding@gmail.com"><img src="/images/envelope-fill.svg" height="16" style="vertical-align:middle"></a> ounanding@gmail.com <img src="/images/calendar3.svg" height="16" style="vertical-align:middle"> Sat Aug  1 20:24:23 PDT 2026
+
+<div style="display:none">
+$$
+\newcommand{\mx}[1]{\begin{pmatrix} #1 \end{pmatrix}}
+\newcommand{\gp}[1]{\left( #1 \right)}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\cp}[1]{{#1^\times}}
+\DeclareMathOperator{\tr}{tr}
+\renewcommand{\AA}{\mathbf{A}}
+\newcommand{\BB}{\mathbf{B}}
+\newcommand{\CC}{\mathbf{C}}
+\newcommand{\EE}{\mathbf{E}}
+\newcommand{\FF}{\mathbf{F}}
+\newcommand{\HH}{\mathbf{H}}
+\newcommand{\II}{\mathbf{I}}
+\newcommand{\KK}{\mathbf{K}}
+\newcommand{\LL}{\mathbf{L}}
+\newcommand{\MM}{\mathbf{M}}
+\newcommand{\NN}{\mathbf{N}}
+\newcommand{\OO}{\mathbf{O}}
+\newcommand{\PP}{\mathbf{P}}
+\newcommand{\QQ}{\mathbf{Q}}
+\newcommand{\RR}{\mathbf{R}}
+\renewcommand{\SS}{\mathbf{S}}
+\newcommand{\TT}{\mathbf{T}}
+\renewcommand{\TT}{\mathbf{T}}
+\newcommand{\UU}{\mathbf{U}}
+\newcommand{\VV}{\mathbf{V}}
+\newcommand{\WW}{\mathbf{W}}
+\newcommand{\XX}{\mathbf{X}}
+\renewcommand{\aa}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\cc}{\mathbf{c}}
+\newcommand{\dd}{\mathbf{d}}
+\newcommand{\ee}{\mathbf{e}}
+\newcommand{\ff}{\mathbf{f}}
+\renewcommand{\gg}{\mathbf{g}}
+\newcommand{\jj}{\mathbf{j}}
+\newcommand{\mm}{\mathbf{m}}
+\newcommand{\nn}{\mathbf{n}}
+\newcommand{\pp}{\mathbf{p}}
+\newcommand{\qq}{\mathbf{q}}
+\newcommand{\rr}{\mathbf{r}}
+\renewcommand{\tt}{\mathbf{t}}
+\newcommand{\uu}{\mathbf{u}}
+\newcommand{\vv}{\mathbf{v}}
+\newcommand{\ww}{\mathbf{w}}
+\newcommand{\xx}{\mathbf{x}}
+\newcommand{\yy}{\mathbf{y}}
+\newcommand{\zz}{\mathbf{z}}
+\newcommand{\ttau}{\boldsymbol{\tau}}
+\newcommand{\eye}{\boldsymbol{\delta}}
+$$
+</div>
+
+I am taking Marshall's perspective class. In one assignment we are given a quadrilateral whose two pairs of opposite edges converge to two vanishing points.
+The task is to find out the extrusion direction to make a cube from this quadrilateral.
+
+One typical technique is to inscribe a circle (or ellipse in perspective view) in
+the quadrilateral and then use the two axes to derive the extrusion direction.
+
+This is almost immediate under orthographic projection $\PP$. We are basically interested in the behavior of a matrix of the form $(\PP \ww) (\PP \ww)^T = \PP \ww \ww^T \PP^T$. And that outer $\ww \ww^T$ (sum of two outers $\vv \vv^T + \uu \uu^T$ actually, for the two directions of the quadrilateral) can be written in the form $\II - \nn \nn^T$. After absorbing the pair of $\PP \cdot \PP^T$ in, we will get $\II_2 - \bar{\nn} \bar{\nn}^T$, which is known to have two closed form eigenvectors.
+They are the minor and major axes. It is easy to tell which is which based on the magnitudes of the eigenvalues. And most importantly, the minor one is the projected normal or extrusion direction.
+
+```
+u = {u1, u2, u3}; v = {v1, v2, v3};
+n = Cross[u, v];
+vars = {u1, u2, u3, v1, v2, v3, h};
+cons = {u.u - 1, v.v - 1, u.v};
+gb = GroebnerBasis[cons, vars];
+rem[e_] := Last[PolynomialReduce[Expand[e], gb, vars]]
+rem /@ Flatten[AAt - h^2 (IdentityMatrix[2] - Outer[Times, nb, nb])]
+nbp = {-nb[[2]], nb[[1]]};
+rem /@ (AAt.nbp - h^2 nbp)
+```
+
+However, the real perspective case seems like an approximation.
+
+<!-- Markdeep: --><style class="fallback">body{visibility:hidden;white-space:pre;font-family:monospace}</style><script src="markdeep.min.js" charset="utf-8"></script><script src="https://morgan3d.github.io/markdeep/latest/markdeep.min.js" charset="utf-8"></script><script>window.alreadyProcessedMarkdeep||(document.body.style.visibility="visible")</script>
