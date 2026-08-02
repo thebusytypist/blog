@@ -5,11 +5,27 @@
   <link href="https://blog.linearconstraints.net"/>
   <link rel="self" href="https://blog.linearconstraints.net/atom.xml"/>
   <id>https://blog.linearconstraints.net/</id>
-  <updated>2026-02-27T19:50:25-08:00</updated>
+  <updated>2026-08-01T20:24:23-07:00</updated>
   <author>
     <name>Ounan Ding</name>
     <email>ounanding@gmail.com</email>
   </author>
+
+  <entry>
+    <title>Complete the cube</title>
+    <link href="https://blog.linearconstraints.net/complete-the-cube-ortho.md.html"/>
+    <id>https://blog.linearconstraints.net/complete-the-cube-ortho.md.html</id>
+    <updated>2026-08-01T20:24:23-07:00</updated>
+    <summary>Complete the cube</summary>
+  </entry>
+
+  <entry>
+    <title>Indefinite buckling</title>
+    <link href="https://blog.linearconstraints.net/indefinite-buckling.md.html"/>
+    <id>https://blog.linearconstraints.net/indefinite-buckling.md.html</id>
+    <updated>2026-06-29T22:07:29-07:00</updated>
+    <summary>Indefinite buckling</summary>
+  </entry>
 
   <entry>
     <title>On arithmetic and math education</title>
